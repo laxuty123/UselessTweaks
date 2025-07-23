@@ -15,12 +15,15 @@ val modAuthor = project.findProperty("mod_author") as String
 val minecraftVersion = project.findProperty("minecraft_version") as String
 val loaderVersion = project.findProperty("loader_version") as String
 
+val devauthVersion = project.findProperty("devauth_version") as String
+
 base {
     archivesName.set(modName)
 }
 
 repositories {
     maven("https://maven.terraformersmc.com/")
+    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
 dependencies {
@@ -28,6 +31,8 @@ dependencies {
     mappings(loom.officialMojangMappings())
 
     modImplementation("net.fabricmc:fabric-loader:${loaderVersion}")
+
+    modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauthVersion}")
 }
 
 java {
