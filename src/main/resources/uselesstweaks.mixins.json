@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "me.laxuty.uselesstweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1,
+    "maxShiftBy": 5
+  }
+}
