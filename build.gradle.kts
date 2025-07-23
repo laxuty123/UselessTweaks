@@ -17,6 +17,7 @@ val loaderVersion = project.findProperty("loader_version") as String
 
 val fabricAPIVersion = project.findProperty("fabricAPI_version") as String
 val devauthVersion = project.findProperty("devauth_version") as String
+val lombokVersion = project.findProperty("lombok_version") as String
 
 base {
     archivesName.set(modName)
@@ -35,6 +36,9 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${fabricAPIVersion}")
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauthVersion}")
+
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
 }
 
 java {
