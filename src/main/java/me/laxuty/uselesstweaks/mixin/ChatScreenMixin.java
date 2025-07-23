@@ -1,6 +1,7 @@
 package me.laxuty.uselesstweaks.mixin;
 
 import me.laxuty.uselesstweaks.UselessTweaks;
+import me.laxuty.uselesstweaks.config.categories.MiscellaneousCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.client.gui.components.EditBox;
@@ -36,7 +37,18 @@ public class ChatScreenMixin {
 
     @Unique
     public int uselesstweaks$calculateWidthForInputBox() {
-        final var chatWidth = ChatComponent.getWidth(Minecraft.getInstance().options.chatWidth().get());
+        var chatWidth = ChatComponent.getWidth(Minecraft.getInstance().options.chatWidth().get());
+
+        final var minimumWidth = UselessTweaks.config.miscellaneous.chat.compactInputBoxMinimumWidth;
+        final var maximumWidth = UselessTweaks.config.miscellaneous.chat.compactInputBoxMaximumWidth;
+        final var isMinimumGreater = UselessTweaks.config.miscellaneous.chat.isInputBoxMinimumGreaterThanTheMaximum();
+
+        if(chatWidth > maximumWidth) {
+            chatWidth = isMinimumGreater ? minimumWidth : maximumWidth;
+        } else if(chatWidth < minimumWidth) {
+            chatWidth = minimumWidth;
+        }
+
         final var chatScale = (float) Minecraft.getInstance().options.chatScale().get().doubleValue();
         final var accurateWidth = Mth.ceil((float) chatWidth / chatScale);
         return accurateWidth + 12;
