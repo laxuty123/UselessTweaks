@@ -19,6 +19,7 @@ val fabricAPIVersion = project.findProperty("fabricAPI_version") as String
 val devauthVersion = project.findProperty("devauth_version") as String
 val javaAnnotationsVersion = project.findProperty("java_annotations_version") as String
 val lombokVersion = project.findProperty("lombok_version") as String
+val latticeVersion = project.findProperty("lattice_version") as String
 
 base {
     archivesName.set(modName)
@@ -35,6 +36,11 @@ dependencies {
 
     modImplementation("net.fabricmc:fabric-loader:${loaderVersion}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${fabricAPIVersion}")
+    modImplementation("com.moulberry:lattice:${latticeVersion}") {
+        attributes {
+            attribute(Attribute.of("earth.terrarium.cloche.modLoader", String::class.java), "fabric")
+        }
+    }
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauthVersion}")
 
