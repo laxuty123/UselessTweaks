@@ -17,6 +17,7 @@ val loaderVersion = project.findProperty("loader_version") as String
 
 val fabricAPIVersion = project.findProperty("fabricAPI_version") as String
 val devauthVersion = project.findProperty("devauth_version") as String
+val javaAnnotationsVersion = project.findProperty("java_annotations_version") as String
 val lombokVersion = project.findProperty("lombok_version") as String
 
 base {
@@ -37,6 +38,7 @@ dependencies {
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauthVersion}")
 
+    compileOnly("org.jetbrains:annotations:${javaAnnotationsVersion}")
     compileOnly("org.projectlombok:lombok:${lombokVersion}")
     annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
 }
