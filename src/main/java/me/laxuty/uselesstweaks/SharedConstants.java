@@ -10,4 +10,5 @@ public final class SharedConstants {
             .enableComplexMapKeySerialization()
             .serializeNulls()
             .create();
+
 }

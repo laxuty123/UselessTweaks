@@ -1,6 +1,8 @@
 package me.laxuty.uselesstweaks.config;
 
+import com.moulberry.lattice.annotation.LatticeCategory;
 import me.laxuty.uselesstweaks.SharedConstants;
+import me.laxuty.uselesstweaks.config.categories.MiscellaneousCategory;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -9,6 +11,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
 public final class UselessTweaksConfig {
+
+    @LatticeCategory(name = "uselesstweaks.config.miscellaneous")
+    public MiscellaneousCategory miscellaneous = new MiscellaneousCategory();
 
     public static UselessTweaksConfig load(@NotNull Path folder) {
         if(Files.exists(folder)) {

@@ -5,5 +5,14 @@
   "injectors": {
     "defaultRequire": 1,
     "maxShiftBy": 5
-  }
+  },
+  "client": [
+    "AbstractContainerScreenMixin",
+    "AbstractRecipeBookScreenMixin",
+    "ChatScreenMixin",
+    "EffectsInInventoryMixin",
+    "GuiMixin",
+    "InventoryScreenMixin",
+    "RecipeBookComponentMixin"
+  ]
 }

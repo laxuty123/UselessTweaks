@@ -1,0 +1,14 @@
+{
+  "uselesstweaks.config.miscellaneous": "Miscellaneous",
+  "uselesstweaks.config.miscellaneous.chat": "Chat Tweaks",
+  "uselesstweaks.config.miscellaneous.chat.compactInputBox": "Compact Input Box",
+  "uselesstweaks.config.miscellaneous.chat.compactInputBox.description": "Makes the input box the same width as the chat box.",
+  "uselesstweaks.config.miscellaneous.hide_recipe_book": "Hide Recipe Book",
+  "uselesstweaks.config.miscellaneous.hide_recipe_book.description": "Hides the recipe book from showing up in your inventory.",
+  "uselesstweaks.config.miscellaneous.no_recipe_book_shifting": "No Recipe Book Shifting",
+  "uselesstweaks.config.miscellaneous.no_recipe_book_shifting.description": "Stops the recipe book from shifting your inventory towards the right when toggled",
+  "uselesstweaks.config.miscellaneous.hideOffHandSlot": "Hide Off Hand Slot",
+  "uselesstweaks.config.miscellaneous.hideOffHandSlot.description": "Hides the off hand slot from showing up in your inventory\n\nWARNING: This can break with certain texture packs!",
+  "uselesstweaks.config.miscellaneous.hide_status_effects": "Hide Status Effects",
+  "uselesstweaks.config.miscellaneous.hide_status_effects.description": "Hides the status effects from showing in various places."
+}
