@@ -1,14 +1,61 @@
 plugins {
     id("java")
+    id("fabric-loom")
 }
 
 group = "me.laxuty.project"
-version = "1.0-SNAPSHOT"
+version = project.findProperty("mod_version") as String
+
+val modID = project.findProperty("mod_id") as String
+val modName = project.findProperty("mod_name") as String
+val modDescription = project.findProperty("mod_description") as String
+val modLicense = project.findProperty("mod_license") as String
+val modAuthor = project.findProperty("mod_author") as String
+
+val minecraftVersion = project.findProperty("minecraft_version") as String
+val loaderVersion = project.findProperty("loader_version") as String
+
+base {
+    archivesName.set(modName)
+}
 
 repositories {
-    mavenCentral()
+    maven("https://maven.terraformersmc.com/")
 }
 
 dependencies {
+    minecraft("com.mojang:minecraft:$minecraftVersion")
+    mappings(loom.officialMojangMappings())
 
+    modImplementation("net.fabricmc:fabric-loader:${loaderVersion}")
+}
+
+java {
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName}" }
+    }
+}
+
+tasks.processResources {
+    filesMatching("fabric.mod.json") {
+        expand(
+            mapOf(
+                "mod_id" to modID,
+                "mod_name" to modName,
+                "mod_version" to project.version,
+                "mod_description" to modDescription,
+                "mod_license" to modLicense,
+                "mod_author" to modAuthor,
+                "minecraft_version" to minecraftVersion,
+                "loader_version" to loaderVersion
+            )
+        )
+    }
 }
