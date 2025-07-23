@@ -15,6 +15,7 @@ val modAuthor = project.findProperty("mod_author") as String
 val minecraftVersion = project.findProperty("minecraft_version") as String
 val loaderVersion = project.findProperty("loader_version") as String
 
+val fabricAPIVersion = project.findProperty("fabricAPI_version") as String
 val devauthVersion = project.findProperty("devauth_version") as String
 
 base {
@@ -31,6 +32,7 @@ dependencies {
     mappings(loom.officialMojangMappings())
 
     modImplementation("net.fabricmc:fabric-loader:${loaderVersion}")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${fabricAPIVersion}")
 
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${devauthVersion}")
 }
