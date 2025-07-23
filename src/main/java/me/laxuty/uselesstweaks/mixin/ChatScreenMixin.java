@@ -1,7 +1,6 @@
 package me.laxuty.uselesstweaks.mixin;
 
 import me.laxuty.uselesstweaks.UselessTweaks;
-import me.laxuty.uselesstweaks.config.categories.MiscellaneousCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.client.gui.components.EditBox;

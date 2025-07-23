@@ -28,10 +28,17 @@ public final class MiscellaneousCategory {
         @LatticeIntRange(min = 0, max = 320)
         @LatticeWidgetSlider
         public int compactInputBoxMaximumWidth = 320;
-
         public boolean isInputBoxMinimumGreaterThanTheMaximum() {
             return compactInputBoxMinimumWidth > compactInputBoxMaximumWidth;
         }
+
+        @LatticeOption(title = "uselesstweaks.config.miscellaneous.chat.ignoreDeleteChatPackets", description = "!!.description")
+        @LatticeWidgetButton
+        public boolean ignoreDeleteChatPackets;
+
+        @LatticeOption(title = "uselesstweaks.config.miscellaneous.chat.ignoreResetChatPackets", description = "!!.description")
+        @LatticeWidgetButton
+        public boolean ignoreResetChatPackets;
     }
 
     @LatticeOption(title = "uselesstweaks.config.miscellaneous.hide_recipe_book", description = "!!.description")

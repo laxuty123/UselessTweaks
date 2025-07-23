@@ -10,6 +10,8 @@
     "AbstractContainerScreenMixin",
     "AbstractRecipeBookScreenMixin",
     "ChatScreenMixin",
+    "ClientConfigurationPacketListenerImplMixin",
+    "ClientPacketListenerMixin",
     "EffectsInInventoryMixin",
     "GuiMixin",
     "InventoryScreenMixin",
